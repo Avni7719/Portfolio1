@@ -1,9 +1,11 @@
-# TODO: Upload Portfolio to GitHub Portfolio1 Repo
+# TODO: Fix Vercel Build ESLint Error in Header.js & Update GitHub - IN PROGRESS
 
-## Plan Steps:
-- [ ] 1. Update .git/config remote origin to https://github.com/Avni7719/Portfolio1.git
-- [ ] 2. Update README.md title to \"# Portfolio1\"
-- [ ] 3. Stage changes: git add .
-- [ ] 4. Commit: git commit -m \"Upload complete portfolio to Portfolio1\"
-- [ ] 5. Push: git push -u origin main
-- [ ] 6. Verify on GitHub, update TODO.md as complete
+## Previous Upload - COMPLETE ✅
+- [x] Uploaded portfolio to https://github.com/Avni7719/Portfolio1.git
+
+## Fix Vercel Build Steps:
+- [ ] 1. Fix Header.js useEffect missing dependency 'menuItems'
+- [ ] 2. Test: npm run build succeeds locally
+- [ ] 3. Commit changes
+- [ ] 4. Push to main
+- [ ] 5. Trigger Vercel redeploy

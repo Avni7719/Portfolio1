@@ -43,7 +43,7 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [menuItems]);
 
   const currentIndex = hoverIndex !== null ? hoverIndex : menuItems.findIndex(item => item.id === activeTab);
 
