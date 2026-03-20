@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Draggable from 'react-draggable';
+
 import myPhoto from '../assets/myPhoto.jpg';
 
 const Hero = ({ data }) => {
@@ -30,7 +30,7 @@ const Hero = ({ data }) => {
   return (
     <section id="home" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-black via-blue-900 to-black">
       {/* Animated Background Particles */}
-      {[...Array(50)].map((_, i) => (
+{[...Array(20)].map((_, i) => (
         <div
           key={i}
           className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-60 animate-float"
@@ -69,36 +69,34 @@ const Hero = ({ data }) => {
             </div>
 
             {/* Download Resume Button */}
-            <Draggable>
               <a
                 href="/Resume_avni.pdf"
                 download="Resume_avni.pdf"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl cursor-move inline-block"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 group"
               >
+                <svg className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10l-5.5 5.5m0 0L12 21l5.5-5.5m-5.5 5.5V7" />
+                </svg>
                 Download Resume
               </a>
-            </Draggable>
           </div>
 
           {/* Right Side: Portrait Image */}
           <div className="flex justify-center lg:justify-end">
-            <Draggable>
-              <div className="relative cursor-move group">
-                <div className="w-80 h-96 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-1 shadow-2xl">
-                  <div className="w-full h-full bg-gray-900 rounded-2xl overflow-hidden flex items-center justify-center">
+              <div className="relative group w-72 h-96 sm:w-80 sm:h-[28rem] md:w-96 md:h-[32rem] flex-shrink-0 max-w-md mx-auto">
+                <div className="w-full h-full bg-gradient-to-br from-blue-400 via-cyan-400 to-blue-600 rounded-2xl p-2 shadow-2xl group-hover:shadow-glow transition-all duration-500">
+                  <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden flex items-center justify-center p-4">
                     <img
                       src={myPhoto}
                       alt="Avni Gupta"
-                      className="w-full h-full object-cover animate-slide-up"
+                      className="w-full h-full object-cover rounded-lg shadow-2xl group-hover:scale-[1.02] transition-all duration-500"
                     />
                   </div>
                 </div>
-
-                {/* Glowing Effect */}
-                <div className="absolute inset-0 bg-blue-400/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+                {/* Stable Glowing Effect */}
+                <div className="absolute -inset-2 bg-gradient-to-r from-blue-400/30 via-cyan-400/20 to-blue-500/30 rounded-2xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-            </Draggable>
-          </div>
+            </div>
         </div>
       </div>
     </section>

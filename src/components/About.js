@@ -1,5 +1,4 @@
 import React from 'react';
-import Draggable from 'react-draggable';
 import { FaBrain, FaRobot, FaCode, FaJava, FaPython, FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaGithub, FaCloud, FaBasketballBall } from 'react-icons/fa';
 import { SiMongodb, SiTailwindcss } from 'react-icons/si';
 
@@ -21,21 +20,19 @@ const About = () => {
         />
       ))}
       <div className="max-w-4xl mx-auto relative z-10">
-        <Draggable>
-          <div className="glass-card p-8 mb-12 cursor-move hover:shadow-glow transition-all duration-300" style={{ boxShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1)' }}>
-            <h2 className="text-4xl neon-heading mb-6 text-center">About Me</h2>
-            <p className="text-lg leading-relaxed text-center text-white">
-              Hi, I’m <span className="text-teal-glow font-semibold">Avni Gupta</span>, the Lead of the Microsoft Learn Student Ambassador (MLSA). I’m a passionate cloud developer with a strong interest in AWS and cloud technologies. I have a solid foundation in Java and front-end development, and I’m currently expanding my skill set as an AI/ML learner. Beyond academics and technology, I’m a former state-level basketball player an experience that has shaped my discipline, teamwork, leadership, and resilience.
-            </p>
-          </div>
-        </Draggable>
+        <div className="glass-card p-8 mb-12 hover:scale-105 hover:shadow-glow hover:rotate-1 cursor-pointer transition-all duration-500 mx-auto max-w-2xl" style={{ boxShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1)' }}>
+          <h2 className="text-4xl neon-heading mb-6 text-center">About Me</h2>
+          <p className="text-lg leading-relaxed text-center text-white">
+            Hi, I'm <span className="text-teal-glow font-semibold">Avni Gupta</span>, the Lead of the Microsoft Learn Student Ambassador (MLSA). I'm a passionate cloud developer with a strong interest in AWS and cloud technologies. I have a solid foundation in Java and front-end development, and I'm currently expanding my skill set as an AI/ML learner. Beyond academics and technology, I'm a former state-level basketball player an experience that has shaped my discipline, teamwork, leadership, and resilience.
+          </p>
+        </div>
 
         {/* My Skills Heading */}
         <h3 className="text-2xl font-bold text-center text-white mt-8 mb-4 glow-text">My Skills</h3>
 
         {/* Skill Icons Marquee */}
         <div className="relative overflow-hidden mt-8">
-          <div className="flex animate-marquee">
+          <div className="flex animate-marquee pointer-events-none">
             {[
               { icon: FaBrain, label: 'AI/ML' },
               { icon: FaRobot, label: 'AI Agent Developer' },
@@ -53,7 +50,7 @@ const About = () => {
               { icon: FaCloud, label: 'Cloud & DevOps' },
               { icon: FaBasketballBall, label: 'State Basketball Player' }
             ].map((skill, index) => (
-              <div key={index} className="flex flex-col items-center mx-6 group cursor-pointer">
+              <div key={index} className="flex flex-col items-center mx-6 group">
                 <skill.icon className="text-4xl text-teal-400 group-hover:text-cyan-300 transition-colors duration-300 drop-shadow-lg group-hover:drop-shadow-2xl" />
                 <span className="text-xs text-white mt-2 opacity-70 group-hover:opacity-100 transition-opacity duration-300">{skill.label}</span>
               </div>
@@ -76,7 +73,7 @@ const About = () => {
               { icon: FaCloud, label: 'Cloud & DevOps' },
               { icon: FaBasketballBall, label: 'State Basketball Player' }
             ].map((skill, index) => (
-              <div key={`dup-${index}`} className="flex flex-col items-center mx-6 group cursor-pointer">
+              <div key={`dup-${index}`} className="flex flex-col items-center mx-6 group">
                 <skill.icon className="text-4xl text-teal-400 group-hover:text-cyan-300 transition-colors duration-300 drop-shadow-lg group-hover:drop-shadow-2xl" />
                 <span className="text-xs text-white mt-2 opacity-70 group-hover:opacity-100 transition-opacity duration-300">{skill.label}</span>
               </div>
