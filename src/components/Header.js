@@ -21,16 +21,13 @@ const Header = () => {
     setActiveTab(id);
     setIsMenuOpen(false);
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = menuItems.map(item => document.getElementById(item.id));
       const scrollPosition = window.scrollY + 100;
-
       sections.forEach((section, index) => {
         if (section) {
           const { offsetTop, offsetHeight } = section;
@@ -50,6 +47,7 @@ const Header = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-black via-blue-900 to-black border-b-2 border-cyan-400 shadow-lg shadow-cyan-500/20">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-center items-center">
+        {/* Desktop Menu */}
         <div className="hidden md:flex relative items-center justify-around w-full">
           {menuItems.map((item, index) => (
             <button
@@ -75,11 +73,9 @@ const Header = () => {
           ></div>
         </div>
 
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white focus:outline-none"
-          >
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -91,6 +87,7 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-gradient-to-r from-black via-blue-900 to-black border-t border-cyan-400/20">
           <div className="px-4 py-2 space-y-2">
