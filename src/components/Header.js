@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 const Header = () => {
   const [activeTab, setActiveTab] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(null);
 
-  const menuItems = [
+  const menuItems = useMemo(() => [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Me' },
     { id: 'projects', label: 'Projects' },
@@ -15,7 +15,7 @@ const Header = () => {
     { id: 'testimonials', label: 'Testimonials' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact' },
-  ];
+  ], []);
 
   const handleClick = (id) => {
     setActiveTab(id);
@@ -115,4 +115,3 @@ const Header = () => {
 };
 
 export default Header;
-
